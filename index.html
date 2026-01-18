@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="x-apple-disable-message-reformatting">
+  <meta name="color-scheme" content="light dark">
+  <meta name="supported-color-schemes" content="light dark">
+  <title>The Kitchen Sink</title>
+  <style>
+    :root { color-scheme: light dark; supported-color-schemes: light dark; }
+
+    /* --- CORE RESETS --- */
+    body { margin: 0; padding: 0; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+    img { border: 0; line-height: 100%; outline: none; text-decoration: none; display: block; }
+    table { border-collapse: collapse !important; }
+    
+    /* --- INTERACTIVE LOGIC --- */
+    .toggle-input { display: none !important; }
+    #tab1:checked ~ .tab-1-content { display: block !important; }
+    #tab2:checked ~ .tab-2-content { display: block !important; }
+    #tab1:checked ~ .tab-label-1 { background-color: #A6E22E !important; color: #272822 !important; }
+    #tab2:checked ~ .tab-label-2 { background-color: #A6E22E !important; color: #272822 !important; }
+
+    /* --- DARK MODE OVERRIDES --- */
+    @media (prefers-color-scheme: dark) {
+      .dark-bg { background-color: #272822 !important; }
+      .dark-text { color: #F8F8F2 !important; }
+      .gmail-bg-fix { background-image: linear-gradient(#272822, #272822) !important; }
+    }
+    [data-ogsc] .dark-bg { background-color: #272822 !important; }
+    [data-ogsc] .dark-text { color: #F8F8F2 !important; }
+
+    /* --- RESPONSIVE --- */
+    @media screen and (max-width: 600px) {
+      .container { width: 100% !important; }
+      .stack { display: block !important; width: 100% !important; }
+    }
+  </style>
+</head>
+<body class="dark-bg" style="background-color: #F8F8F2;">
+  <center>
+    <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: auto;" class="container gmail-bg-fix">
+      
+      <tr>
+        <td align="center" style="padding: 20px;">
+          <img src="https://via.placeholder.com/1200x600/F92672/FFFFFF?text=Retina+Hero" width="600" alt="Hero Image" style="display: block; width: 100%; max-width: 600px; height: auto;">
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center" style="padding: 40px;">
+          <h1 style="font-family: Arial, sans-serif; font-size: 24px; color: #333333;">Welcome to the Template</h1>
+          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #666666;">
+            This layout is responsive and Outlook-ready.
+          </p>
+          <p><i>Plenty more to come...</i></p>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center" style="padding: 20px;">
+          <div>
+            <a href="#" style="background-color:#66D9EF; border-radius:5px; color:#272822; display:inline-block; font-family:sans-serif; font-size:16px; font-weight:bold; line-height:50px; text-align:center; text-decoration:none; width:200px; -webkit-text-size-adjust:none;">VML BUTTON</a>
+            </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td align="center" style="padding: 20px;" class="dark-text">
+          <input type="radio" id="tab1" name="tabs" class="toggle-input" checked>
+          <input type="radio" id="tab2" name="tabs" class="toggle-input">
+          
+          <div style="margin-bottom: 20px;">
+            <label for="tab1" class="tab-label-1" style="padding: 10px; border: 1px solid #75715E; cursor: pointer;">TAB 1</label>
+            <label for="tab2" class="tab-label-2" style="padding: 10px; border: 1px solid #75715E; cursor: pointer;">TAB 2</label>
+          </div>
+
+          <div class="tab-1-content" style="display:none; mso-hide:all;">
+            <p style="font-family: Arial, sans-serif; color: #F92672;">Interactive Content A</p>
+          </div>
+          <div class="tab-2-content" style="display:none; mso-hide:all;">
+            <p style="font-family: Arial, sans-serif; color: #66D9EF;">Interactive Content B</p>
+          </div>
+          
+          </td>
+      </tr>
+
+    </table>
+    </center>
+</body>
+</html>
