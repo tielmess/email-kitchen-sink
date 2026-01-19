@@ -11,7 +11,9 @@
     :root { color-scheme: light dark; supported-color-schemes: light dark; }
 
     /* --- CORE RESETS --- */
+    html { background-color: #F8F8F2;}
     body { margin: 0; padding: 0; width: 100% !important; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
     img { border: 0; line-height: 100%; outline: none; text-decoration: none; display: block; }
     table { border-collapse: collapse !important; }
     
@@ -24,9 +26,13 @@
 
     /* --- DARK MODE OVERRIDES --- */
     @media (prefers-color-scheme: dark) {
-      .dark-bg { background-color: #272822 !important; }
+      /* Standard Dark Mode Media Query */
+      html, .dark-bg { background-color: #272822 !important; }
       .dark-text { color: #F8F8F2 !important; }
       .gmail-bg-fix { background-image: linear-gradient(#272822, #272822) !important; }
+      /* Image Swapping */
+      .light-img { display: none !important; }
+      .dark-img { display: block !important; width: auto !important; overflow: visible !important; }
     }
     [data-ogsc] .dark-bg { background-color: #272822 !important; }
     [data-ogsc] .dark-text { color: #F8F8F2 !important; }
@@ -37,24 +43,35 @@
       .stack { display: block !important; width: 100% !important; }
     }
   </style>
+  <style>
+    /* Gmail iOS Specific Blend Mode Hack */
+      u + .body .gmail-blend-screen { mix-blend-mode: screen; }
+      u + .body .gmail-blend-difference { mix-blend-mode: difference; }
+      /* Force background color in Gmail using Linear Gradient */
+      u + .body .dark-bg { background-image: linear-gradient(#1e1e1e, #1e1e1e) !important; }
+  </style>
 </head>
-<body class="dark-bg" style="background-color: #F8F8F2;">
-  <center>
+<body class="body dark-bg" style="margin: 0; padding: 0; background-color: transparent;">
+
     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 600px; margin: auto;" class="container gmail-bg-fix">
       
       <tr>
         <td align="center" style="padding: 20px;">
-          <img src="https://via.placeholder.com/1200x600/F92672/FFFFFF?text=Retina+Hero" width="600" alt="Hero Image" style="display: block; width: 100%; max-width: 600px; height: auto;">
+          <a href="https://example.com" style="text-decoration: none;">
+            <img src="logo-light.png" width="150" alt="Logo Light" class="light-img" style="display: block; border: 0;">
+            
+            <img src="logo-dark.png" width="150" alt="Logo Dark" class="dark-img" style="display: none; mso-hide: all; border: 0;">
+          </a>
         </td>
       </tr>
 
       <tr>
         <td align="center" style="padding: 40px;">
-          <h1 style="font-family: Arial, sans-serif; font-size: 24px; color: #333333;">Welcome to the Template</h1>
-          <p style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #666666;">
+          <h1 class="dark-text" style="font-family: Arial, sans-serif; font-size: 24px; color: #464646;">Welcome to the Template</h1>
+          <p class="dark-text" style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #464646;">
             This layout is responsive and Outlook-ready.
           </p>
-          <p><i>Plenty more to come...</i></p>
+          <p class="dark-text" style="font-family: Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #464646;"><i>Plenty more to come...</i></p>
         </td>
       </tr>
 
@@ -87,6 +104,6 @@
       </tr>
 
     </table>
-    </center>
+
 </body>
 </html>
